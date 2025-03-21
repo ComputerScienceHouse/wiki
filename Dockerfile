@@ -1,4 +1,4 @@
-FROM docker.io/mediawiki:1.40
+FROM docker.io/mediawiki:1.43
 
 COPY remoteip.conf /etc/apache2/mods-available/
 RUN a2enmod remoteip
@@ -24,9 +24,9 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     mv composer.phar /usr/local/bin/composer
 
 RUN docker-php-ext-configure ldap && \
-  docker-php-ext-install -j$(nproc) ldap && \
-  mkdir /etc/ldap && \
-  echo 'TLS_CACERT  /etc/ssl/certs/ca-certificates.crt' > /etc/ldap/ldap.conf
+    docker-php-ext-install -j$(nproc) ldap && \
+    mkdir /etc/ldap && \
+    echo 'TLS_CACERT  /etc/ssl/certs/ca-certificates.crt' > /etc/ldap/ldap.conf
 
 RUN chown -R www-data:www-data composer.json
 
