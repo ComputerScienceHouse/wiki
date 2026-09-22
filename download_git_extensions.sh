@@ -12,10 +12,10 @@ for i in "${!extensions[@]}"; do
 
     echo Downloading $extension...
     wget https://github.com/$extension/archive/$ref.zip
-    unzip master.zip
-    rm master.zip
+    unzip $ref.zip
+    rm $ref.zip
 
-    unzipped=${extension#*/}"-master"
+    unzipped=${extension#*/}"-$ref"
     target_dir=/var/www/html/extensions/$target/
     echo Moving $unzipped to $target_dir ...
     mv $unzipped $target_dir
