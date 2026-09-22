@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 # You can specify extensions to be downloaded via GitHub here. You MUST specify a target folder below as well, or shit will break :)
-extensions=( Telshin/Spoilers Pavelovich/WikiBanner wikimedia/mediawiki-extensions-OpenIDConnect wikimedia/mediawiki-extensions-DarkMode edwardspec/mediawiki-aws-s3 ComputerScienceHouse/wiki-user-sig )
-targets=( Spoilers WikiBanner OpenIDConnect DarkMode AWS CSHUserSig )
+extensions=( Telshin/Spoilers Pavelovich/WikiBanner wikimedia/mediawiki-extensions-OpenIDConnect wikimedia/mediawiki-extensions-DarkMode edwardspec/mediawiki-aws-s3 ComputerScienceHouse/wiki-user-sig wikimedia/mediawiki-extensions-PluggableAuth )
+targets=( Spoilers WikiBanner OpenIDConnect DarkMode AWS CSHUserSig PluggableAuth )
 
 for i in "${!extensions[@]}"; do
     extension=${extensions[$i]}

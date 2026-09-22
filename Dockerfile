@@ -14,6 +14,9 @@ RUN bash download_git_extensions.sh
 
 WORKDIR /var/www/html
 
+RUN chgrp -R 0 /var/www/html && \
+    chmod -R g=u /var/www/html
+
 COPY csh-wiki-logo.png images/
 
 # Install composer, I guess...
@@ -28,6 +31,5 @@ RUN docker-php-ext-configure ldap && \
     mkdir /etc/ldap && \
     echo 'TLS_CACERT  /etc/ssl/certs/ca-certificates.crt' > /etc/ldap/ldap.conf 
 
-RUN chown -R www-data:www-data composer.json 
-
+COPY composer.local.json .
 RUN composer update

@@ -1,4 +1,8 @@
 {
+	"require": {
+		"mediawiki/pluggable-auth": "*",
+		"jumbojett/openid-connect-php": "*"
+	},
 	"extra": {
 		"merge-plugin": {
 			"include": [
