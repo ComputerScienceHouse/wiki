@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 # You can specify extensions to be downloaded via GitHub here. You MUST specify a target folder below as well, or shit will break :)
-extensions=( Telshin/Spoilers Pavelovich/WikiBanner wikimedia/mediawiki-extensions-OpenIDConnect wikimedia/mediawiki-extensions-DarkMode edwardspec/mediawiki-aws-s3 ComputerScienceHouse/wiki-user-sig wikimedia/mediawiki-extensions-PluggableAuth wikimedia/mediawiki-extensions-Elastica wikimedia/mediawiki-extensions-CirrusSearch wikimedia/mediawiki-extensions-TitleKey )
-targets=( Spoilers WikiBanner OpenIDConnect DarkMode AWS CSHUserSig PluggableAuth Elastica CirrusSearch TitleKey )
-refs=( master master master master master master master REL1_46 REL1_46 master )
+extensions=( Telshin/Spoilers Pavelovich/WikiBanner wikimedia/mediawiki-extensions-OpenIDConnect wikimedia/mediawiki-extensions-DarkMode edwardspec/mediawiki-aws-s3 ComputerScienceHouse/wiki-user-sig wikimedia/mediawiki-extensions-PluggableAuth wikimedia/mediawiki-extensions-Elastica wikimedia/mediawiki-extensions-CirrusSearch wikimedia/mediawiki-extensions-TitleKey wikimedia/mediawiki-extensions-OAuth )
+targets=( Spoilers WikiBanner OpenIDConnect DarkMode AWS CSHUserSig PluggableAuth Elastica CirrusSearch TitleKey OAuth )
+refs=( master master master master master master master REL1_46 REL1_46 master REL1_46 )
 
 for i in "${!extensions[@]}"; do
     extension=${extensions[$i]}
